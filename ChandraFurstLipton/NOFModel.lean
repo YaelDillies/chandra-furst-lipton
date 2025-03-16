@@ -1,9 +1,5 @@
-import Init.Data.BitVec.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset
-import Mathlib.Algebra.Group.Fin.Basic
-import Mathlib.Data.ENat.Lattice
-import Mathlib.Data.Nat.Bits
 import ChandraFurstLipton.MultidimCorners
+import Mathlib.Data.ENat.Lattice
 
 namespace NOF
 

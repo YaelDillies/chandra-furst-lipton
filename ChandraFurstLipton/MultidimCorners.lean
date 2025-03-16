@@ -1,5 +1,4 @@
-import Mathlib.Algebra.BigOperators.Group.Finset
-import Mathlib.Algebra.Group.Fin.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 namespace NOF
 variable {ι G : Type*}  {d : ℕ} [Fintype ι]
@@ -13,7 +12,7 @@ def IsForbiddenPattern (a : ι → ι → G) : Prop := ∃ v, IsForbiddenPattern
 
 lemma isForbiddenPatternWithTip_iff_forget :
     IsForbiddenPatternWithTip a v ↔ ∀ i, forget i v = forget i (a i) := by
-  simp [Function.funext_iff, IsForbiddenPatternWithTip, eq_comm, forget]
+  simp [funext_iff, IsForbiddenPatternWithTip, eq_comm, forget]
 
 protected alias ⟨IsForbiddenPatternWithTip.forget, IsForbiddenPatternWithTip.of_forget⟩ :=
   isForbiddenPatternWithTip_iff_forget

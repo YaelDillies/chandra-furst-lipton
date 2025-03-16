@@ -1,7 +1,7 @@
 import ChandraFurstLipton.NOFModel
-import ChandraFurstLipton.MultidimCorners
-import Mathlib.Topology.Algebra.InfiniteSum.Group
-import Mathlib.Algebra.Group.Defs
+import Mathlib.Algebra.Group.Fin.Basic
+import Mathlib.Data.Fintype.BigOperators
+import Mathlib.Data.Nat.Bits
 
 namespace NOF
 variable {ι G : Type*} [AddCommGroup G] [DecidableEq G] {d : ℕ} [NeZero d]
