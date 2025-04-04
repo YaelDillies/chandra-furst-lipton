@@ -49,7 +49,7 @@ noncomputable
 def trivial (hd : 3 ≤ d) (F : (Fin d → G) → Bool) : Protocol G d where
   nextBit i x B := by
     refine (Nat.bits (Fintype.equivFin G (x ⟨i + 1, ?_ ⟩))).getI (B.length / d)
-    rw [Ne, add_right_eq_self, ← Nat.cast_one, Fin.natCast_eq_zero, Nat.dvd_one]
+    rw [Ne, add_eq_left, ← Nat.cast_one, Fin.natCast_eq_zero, Nat.dvd_one]
     omega
   guess i x B := F fun j ↦
     if h : j = i then
