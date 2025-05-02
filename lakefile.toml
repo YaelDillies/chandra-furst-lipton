@@ -1,4 +1,5 @@
 name = "ChandraFurstLipton"
+keyword = ["math", "theoretical-computer-science", "additive-combinatorics"]
 defaultTargets = ["ChandraFurstLipton"]
 
 [leanOptions]
