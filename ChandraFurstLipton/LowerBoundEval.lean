@@ -2,10 +2,11 @@ import ChandraFurstLipton.NOFModel
 import Mathlib.Algebra.Group.Fin.Basic
 import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Data.Nat.Bits
+import Mathlib.Data.ZMod.Basic
 
 namespace NOF
 variable {ι G : Type*} [AddCommGroup G] [DecidableEq G] {d : ℕ} [NeZero d]
-  {P : Protocol G d} {t : ℕ} {B : List Bool} {a : Fin d → Fin d → G} [Fintype ι]
+  {P : Protocol G d} {t : ℕ} {B : List Bool} {a : ZMod d → ZMod d → G} [Fintype ι]
 
 def eval (x : ι → G) : Bool :=
   ∑ i, x i == 0
@@ -46,14 +47,15 @@ def getBits (B : List Bool) (i : ℕ) (d : ℕ) : List Bool := Id.run do
 variable [Fintype G]
 
 noncomputable
-def trivial (hd : 3 ≤ d) (F : (Fin d → G) → Bool) : Protocol G d where
+def trivial (hd : 3 ≤ d) (F : (ZMod d → G) → Bool) : Protocol G d where
   nextBit i x B := by
     refine (Nat.bits (Fintype.equivFin G (x ⟨i + 1, ?_ ⟩))).getI (B.length / d)
-    rw [Ne, add_eq_left, ← Nat.cast_one, Fin.natCast_eq_zero, Nat.dvd_one]
+    rw [Ne, add_eq_left, ← Nat.cast_one, ZMod.natCast_zmod_eq_zero_iff_dvd, Nat.dvd_one]
     omega
   guess i x B := F fun j ↦
     if h : j = i then
-      (Fintype.equivFin G).symm (BitVec.toNat (BitVec.ofBoolListLE (getBits B i d)))
+      (Fintype.equivFin G).symm <| (ZMod.finEquiv _).symm
+        (BitVec.toNat (BitVec.ofBoolListLE (getBits B i.val d)))
     else
       x ⟨j, h⟩
 

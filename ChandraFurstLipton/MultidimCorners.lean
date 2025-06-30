@@ -1,8 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
 
 namespace NOF
-variable {ι G : Type*}  {d : ℕ} [Fintype ι]
-  {a : Fin d → Fin d → G} {v : Fin d → G}
+variable {ι G : Type*} {a : ι → ι → G} {v : ι → G}
 
 def forget (i : ι) (x : ι → G) (j : {j : ι // j ≠ i}) : G := x j
 
@@ -17,7 +16,7 @@ lemma isForbiddenPatternWithTip_iff_forget :
 protected alias ⟨IsForbiddenPatternWithTip.forget, IsForbiddenPatternWithTip.of_forget⟩ :=
   isForbiddenPatternWithTip_iff_forget
 
-variable [AddCommGroup G]
+variable [Fintype ι] [AddCommGroup G]
 
 structure IsMultidimCorner (a : ι → ι → G) (b : ι → G): Prop where
   sum_eq_sum : ∀ i j, ∑ k, a i k = ∑ k, a j k
@@ -27,13 +26,13 @@ variable [DecidableEq ι]
 
 lemma isMultidimCorner_forget_of_isForbiddenPattern (a : ι → ι → G) (h : IsForbiddenPattern a)
     (hS : ∀ i, ∑ j, a i j = 0) (i : ι) :
-    IsMultidimCorner (fun j => forget i (a j)) (forget i (a i)) := by
+    IsMultidimCorner (fun j ↦ forget i (a j)) (forget i (a i)) := by
     rw [IsForbiddenPattern] at h
     obtain ⟨v, hv⟩ := h
-    refine ⟨fun k l => ?_, fun k l hneq => ?_⟩
+    refine ⟨fun k l ↦ ?_, fun k l hneq ↦ ?_⟩
     · rw [← sub_eq_zero]
       calc
-        ∑ j : { j // j ≠ i }, a k j - ∑ j : { j // j ≠ i }, a l j
+        ∑ j : {j // j ≠ i}, a k j - ∑ j : { j // j ≠ i }, a l j
           = ∑ j : {j // j ≠ i}, (a k j - a l j) := by rw [Finset.sum_sub_distrib]
         _ = ∑ j ∈ {i}ᶜ, (a k j - a l j) := (Finset.sum_subtype _ (by simp) (a k - a l)).symm
         _ = ∑ j ∈ {i}ᶜ, (a k j - a l j) + (a k i - a l i) := by simp [hv k.2, hv l.2]
