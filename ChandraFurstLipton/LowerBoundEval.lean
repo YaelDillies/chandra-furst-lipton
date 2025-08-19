@@ -50,7 +50,7 @@ noncomputable
 def trivial (hd : 3 ≤ d) (F : (ZMod d → G) → Bool) : Protocol G d where
   nextBit i x B := by
     refine (Nat.bits (Fintype.equivFin G (x ⟨i + 1, ?_ ⟩))).getI (B.length / d)
-    rw [Ne, add_eq_left, ← Nat.cast_one, ZMod.natCast_zmod_eq_zero_iff_dvd, Nat.dvd_one]
+    rw [Ne, add_eq_left, ← Nat.cast_one, ZMod.natCast_eq_zero_iff, Nat.dvd_one]
     omega
   guess i x B := F fun j ↦
     if h : j = i then
