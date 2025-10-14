@@ -50,8 +50,9 @@ noncomputable def funComplexity (F : (ZMod d → G) → Bool) := ⨅ P : Protoco
 
 lemma IsForbiddenPatternWithTip.broadcast_eq [NeZero d] (hF : IsForbiddenPatternWithTip a v)
     (hB : ∀ i, P.broadcast (a i) t = B) : P.broadcast v t = B := by
-  induction' t with t ih generalizing B
-  · simpa using hB 0
+  induction t generalizing B with
+  | zero => simpa using hB 0
+  | succ t ih =>
   simp_rw [Protocol.broadcast_succ] at *
   obtain _ | ⟨b, B⟩ := B
   · cases hB 0
