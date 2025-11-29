@@ -47,7 +47,7 @@ def getBits (B : List Bool) (i : ℕ) (d : ℕ) : List Bool := Id.run do
 variable [Fintype G]
 
 noncomputable
-def trivial (hd : 3 ≤ d) (F : (ZMod d → G) → Bool) : Protocol G d where
+def Protocol.trivial (hd : 3 ≤ d) (F : (ZMod d → G) → Bool) : Protocol G d where
   nextBit i x B := by
     refine (Nat.bits (Fintype.equivFin G (x ⟨i + 1, ?_ ⟩))).getI (B.length / d)
     rw [Ne, add_eq_left, ← Nat.cast_one, ZMod.natCast_eq_zero_iff, Nat.dvd_one]
