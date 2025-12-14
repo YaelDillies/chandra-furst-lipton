@@ -18,7 +18,7 @@ protected alias ⟨IsForbiddenPatternWithTip.forget, IsForbiddenPatternWithTip.o
 
 variable [Fintype ι] [AddCommGroup G]
 
-structure IsMultidimCorner (a : ι → ι → G) (b : ι → G): Prop where
+structure IsMultidimCorner (a : ι → ι → G) (b : ι → G) : Prop where
   sum_eq_sum : ∀ i j, ∑ k, a i k = ∑ k, a j k
   isForbiddenPatternWithTip : IsForbiddenPatternWithTip a b
 
