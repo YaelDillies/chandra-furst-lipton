@@ -56,7 +56,7 @@ lemma IsForbiddenPatternWithTip.broadcast_eq (hF : IsForbiddenPatternWithTip a v
   simp_rw [Protocol.broadcast_succ] at *
   obtain _ | ⟨b, B⟩ := B
   · cases hB 0
-  simp [forall_and] at hB
+  simp only [List.cons.injEq, forall_and] at hB
   specialize ih hB.2
   subst ih
   have h₁ : forget (t : ZMod d) v = forget (t : ZMod d) (a t) := hF.forget t

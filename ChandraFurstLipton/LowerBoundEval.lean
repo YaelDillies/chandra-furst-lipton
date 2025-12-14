@@ -30,7 +30,7 @@ lemma trivial_of_isForbiddenPattern_of_isValid_eval (ha : IsForbiddenPattern a)
   ext j
   obtain hij | rfl := ne_or_eq i j
   · exact ha hij
-  simp [hE] at h
+  simp only [hE, Bool.true_eq, eval_eq_true, forall_const] at h
   rw [← sub_eq_zero]
   calc
     a i i - v i = ∑ j, (a i j - v j) := by
