@@ -1,8 +1,12 @@
-import ChandraFurstLipton.NOFModel
-import Mathlib.Algebra.Group.Fin.Basic
-import Mathlib.Data.Fintype.BigOperators
-import Mathlib.Data.Nat.Bits
-import Mathlib.Data.ZMod.Basic
+module
+
+public import ChandraFurstLipton.NOFModel
+public import Mathlib.Algebra.Group.Fin.Basic
+public import Mathlib.Data.Fintype.BigOperators
+public import Mathlib.Data.Nat.Bits
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 namespace NOF
 variable {ι G : Type*} [AddCommGroup G] [DecidableEq G] {d : ℕ} [NeZero d]

@@ -1,4 +1,8 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+module
+
+public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+
+@[expose] public section
 
 namespace NOF
 variable {ι G : Type*} {a : ι → ι → G} {v : ι → G}

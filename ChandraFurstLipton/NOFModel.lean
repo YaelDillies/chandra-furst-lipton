@@ -1,6 +1,10 @@
-import ChandraFurstLipton.MultidimCorners
-import Mathlib.Data.ENat.Lattice
-import Mathlib.Data.ZMod.Defs
+module
+
+public import ChandraFurstLipton.MultidimCorners
+public import Mathlib.Data.ENat.Lattice
+public import Mathlib.Data.ZMod.Defs
+
+@[expose] public section
 
 namespace NOF
 
