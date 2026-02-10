@@ -1,7 +1,7 @@
 # Chandra-Furst-Lipton
 
-[![.github/workflows/push.yml](https://github.com/YaelDillies/ChandraFurstLipton/actions/workflows/push.yml/badge.svg)](https://github.com/YaelDillies/ChandraFurstLipton/actions/workflows/push.yml)
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/YaelDillies/ChandraFurstLipton)
+[![.github/workflows/push.yml](https://github.com/YaelDillies/chandra-furst-lipton/actions/workflows/push.yml/badge.svg)](https://github.com/YaelDillies/chandra-furst-lipton/actions/workflows/push.yml)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/YaelDillies/chandra-furst-lipton)
 
 The purpose of this repository is to *digitise* some mathematical definitions, theorem statements
 and theorem proofs. Digitisation, or formalisation, is a process where the source material,
@@ -31,7 +31,7 @@ To build the Lean files of this project, you need to have a working version of L
 See [the installation instructions](https://leanprover-community.github.io/get_started.html) (under Regular install).
 Alternatively, click on the button below to open a Gitpod workspace containing the project.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/YaelDillies/ChandraFurstLipton)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/YaelDillies/chandra-furst-lipton)
 
 In either case, run `lake exe cache get` and then `lake build` to build the project.
 

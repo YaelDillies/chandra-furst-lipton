@@ -22,10 +22,10 @@ title: Chandra - Furst - Lipton
 email: yael.dillies@math.se.su
 description: A digitisation of the Number On the Forehead model
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://YaelDillies.github.io/ChandraFurstLipton/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://yaeldillies.github.io/chandra-furst-lipton/" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username: YaelDillies
-repository: YaelDillies/ChandraFurstLipton
+repository: YaelDillies/chandra-furst-lipton
 
 # Build settings
 remote_theme: pages-themes/cayman@v0.2.0
