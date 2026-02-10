@@ -15,39 +15,29 @@ The definitions, theorems and proofs in this repository are taken from the now c
 
 ## The target
 
-The formal system which we are using as a target is Lean 4, a theorem prover based on the Calculus of Inductive Constructions, a dependent type theory. Lean is a project being developed at AWS and Microsoft Research by Leonardo de Moura and his team.
+The formal system which we are using as a target is Lean 4,
+a theorem prover based on the Calculus of Inductive Constructions, a dependent type theory.
+Lean is being developed by the [Lean FRO](https://lean-lang.org).
 
 ## Content of this project
 
 ### Code organisation
 
-The Lean code is contained in the directory `src/`. The subdirectories are:
-* `Mathlib`: Material missing from existing Mathlib developments
-* `Prereqs`: New developments to be integrated to Mathlib
+The Lean code is contained in the directory `ChandraFurstLipton/`.
 
-## Build the Lean files
+## Getting the project
 
 To build the Lean files of this project, you need to have a working version of Lean.
-See [the installation instructions](https://leanprover-community.github.io/get_started.html) (under Regular install).
-Alternatively, click on the button below to open a Gitpod workspace containing the project.
+See [the installation instructions](https://lean-lang.org/install/).
+Alternatively, click on the button below to open an Ona workspace containing the project.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/YaelDillies/chandra-furst-lipton)
 
 In either case, run `lake exe cache get` and then `lake build` to build the project.
 
-## Build the blueprint
+## Contributing
 
-See instructions at https://github.com/PatrickMassot/leanblueprint/.
-
-## Acknowledgements
-
-Our project builds on Mathlib. We must therefore thank its numerous contributors without whom this
-project couldn't even have started.
-
-Much of the project infrastructure has been adapted from
-* [sphere eversion](https://leanprover-community.github.io/sphere-eversion/)
-* [liquid tensor experiment](https://github.com/leanprover-community/liquid/)
-* [unit fractions](https://github.com/b-mehta/unit-fractions/)
+This project is currently not open to contribution.
 
 ## Source reference
 
