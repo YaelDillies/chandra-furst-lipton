@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2024 Yaël Dillies, Isabel Dahlgren. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yaël Dillies, Isabel Dahlgren
+-/
 module
 
 public import ChandraFurstLipton.NOFModel
@@ -5,6 +10,10 @@ public import Mathlib.Algebra.Group.Fin.Basic
 public import Mathlib.Data.Fintype.BigOperators
 public import Mathlib.Data.Nat.Bits
 public import Mathlib.Data.ZMod.Basic
+
+/-!
+# Lower bound on the communication complexity of Eval
+-/
 
 @[expose] public section
 

@@ -1,6 +1,15 @@
+/-
+Copyright (c) 2024 Yaël Dillies, Isabel Dahlgren. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yaël Dillies, Isabel Dahlgren
+-/
 module
 
 public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+
+/-!
+# Multidimensional corners
+-/
 
 @[expose] public section
 

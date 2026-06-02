@@ -1,8 +1,17 @@
+/-
+Copyright (c) 2024 Yaël Dillies, Isabel Dahlgren. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Yaël Dillies, Isabel Dahlgren
+-/
 module
 
 public import ChandraFurstLipton.MultidimCorners
 public import Mathlib.Data.ENat.Lattice
 public import Mathlib.Data.ZMod.Defs
+
+/-!
+# The Number-On-the-Forehead model
+-/
 
 @[expose] public section
 
