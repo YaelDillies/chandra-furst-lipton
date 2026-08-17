@@ -52,7 +52,7 @@ def complexity (P : Protocol G d) (F : (ZMod d → G) → Bool) : ENat :=
   ⨅ (t : ℕ) (_ : IsValid P F t), t
 
 @[simp] lemma le_complexity : t ≤ Protocol.complexity P F ↔ ∀ r : ℕ, P.IsValid F r → t ≤ r := by
-  simp [complexity]
+  simp [complexity, ENat.natCast_le_natCast]
 
 end Protocol
 
