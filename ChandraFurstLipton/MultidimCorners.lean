@@ -48,10 +48,10 @@ lemma isMultidimCorner_forget_of_isForbiddenPattern (a : ι → ι → G) (h : I
         ∑ j : {j // j ≠ i}, a k j - ∑ j : { j // j ≠ i }, a l j
           = ∑ j : {j // j ≠ i}, (a k j - a l j) := by rw [Finset.sum_sub_distrib]
         _ = ∑ j ∈ {i}ᶜ, (a k j - a l j) := (Finset.sum_subtype _ (by simp) (a k - a l)).symm
-        _ = ∑ j ∈ {i}ᶜ, (a k j - a l j) + (a k i - a l i) := by simp [hv k.2, hv l.2]
+        _ = ∑ j ∈ {i}ᶜ, (a k j - a l j) + (a k i - a l i) := by simp [hv k.property, hv l.property]
         _ = ∑ j : ι, (a k j - a l j) := by rw [← Fintype.sum_eq_sum_compl_add]
         _ = 0 := by rw [Finset.sum_sub_distrib, sub_eq_zero, hS k, hS l]
-    · rw [forget, forget, hv, hv l.2.symm]
+    · rw [forget, forget, hv, hv l.property.symm]
       aesop
 
 end NOF
